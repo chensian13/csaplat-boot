@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 * @Author:         陈思安
 * @Version:     2019/6/29 16:01
 */
-public abstract class MyController<T> implements IController<T> {
+public abstract class MyController<T>  implements IController<T> {
 
     public abstract IService<T> getService();
 

@@ -1,9 +1,7 @@
-package csa.stu.util.ap.mvc.plus;
+package csa.stu.util.components;
 
 import csa.stu.util.myutils.pojo.ResultPojo;
 import csa.stu.util.myutils.utils.EmptyUtil;
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
