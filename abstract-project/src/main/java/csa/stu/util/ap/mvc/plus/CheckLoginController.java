@@ -1,7 +1,7 @@
 package csa.stu.util.ap.mvc.plus;
 
-import csa.stu.util.myutils.pojo.ResultPojo;
-import csa.stu.util.myutils.utils.EmptyUtil;
+import csa.stu.util.ap.pojo.ResultPojo;
+import csa.stu.util.myutils.direct.EmptyUtil;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
  * @param <T>
  */
 public interface CheckLoginController {
+    public static final String CHECK_LOGIN="checkLogin";
 
     public abstract Object getLoginUser(HttpServletRequest request);
 
@@ -20,7 +21,7 @@ public interface CheckLoginController {
      * @return
      */
     default ResultPojo wrapUser(HttpServletRequest request, Product product){
-        String cl=request.getHeader("checkLogin");
+        String cl=request.getHeader(CHECK_LOGIN);
         if(EmptyUtil.isEmpty(cl)){
             //不必登录就可以访问
             return product.exe(null);
@@ -37,14 +38,14 @@ public interface CheckLoginController {
     default ResultPojo mustWrapUser(HttpServletRequest request,Product product){
         Object user=getLoginUser(request);
         if(user==null){
-            return noLogin();
+            return rsNoLogin();
         }
         return product.exe(user);
     }
 
 
 
-    default ResultPojo noLogin(){
+    default ResultPojo rsNoLogin(){
         return ResultPojo.newInstance(ResultPojo.NO,"请先登录");
     }
 

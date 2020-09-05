@@ -1,4 +1,4 @@
-package csa.stu.util.myutils.utils;
+package csa.stu.util.myutils.direct;
 
 import java.util.Collection;
 import java.util.Map;

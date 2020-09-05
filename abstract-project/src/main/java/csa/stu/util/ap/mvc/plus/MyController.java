@@ -2,14 +2,13 @@ package csa.stu.util.ap.mvc.plus;
 
 import csa.stu.util.ap.mvc.IController;
 import csa.stu.util.ap.mvc.IService;
-import csa.stu.util.myutils.constant.OperConstant;
-import csa.stu.util.myutils.pojo.ParamPojo;
-import csa.stu.util.myutils.pojo.ResultPojo;
+import csa.stu.util.ap.pojo.ParamPojo;
+import csa.stu.util.ap.pojo.ResultPojo;
+import csa.stu.util.ap.pojo.constant.OperConstant;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -72,7 +71,7 @@ public abstract class MyController<T>  implements IController<T> {
     @RequestMapping("/querySimpleData")
     @ResponseBody
     @Override
-    public ResultPojo<T> querySimpleData(ParamPojo paramPojo,HttpServletRequest request, HttpServletResponse response) {
+    public ResultPojo<T> querySimpleData(ParamPojo paramPojo, HttpServletRequest request, HttpServletResponse response) {
         return getService().selectSimpleData(paramPojo);
     }
 

@@ -1,7 +1,7 @@
 package csa.stu.util.ap.mvc;
 
-import csa.stu.util.myutils.pojo.ParamPojo;
-import csa.stu.util.myutils.pojo.ResultPojo;
+import csa.stu.util.ap.pojo.ParamPojo;
+import csa.stu.util.ap.pojo.ResultPojo;
 
 /**
 * 业务层针对一个数据库实体类，所以规定为泛型

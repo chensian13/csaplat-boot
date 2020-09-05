@@ -1,4 +1,4 @@
-package csa.stu.util.myutils.pojo;
+package csa.stu.util.ap.pojo.entity;
 
 import java.io.Serializable;
 

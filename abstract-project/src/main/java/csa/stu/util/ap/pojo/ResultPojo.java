@@ -1,6 +1,7 @@
-package csa.stu.util.myutils.pojo;
+package csa.stu.util.ap.pojo;
 
-import csa.stu.util.myutils.utils.EmptyUtil;
+import csa.stu.util.myutils.direct.EmptyUtil;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -87,14 +88,14 @@ public class ResultPojo<T> implements Serializable{
 		return rs;
 	}
 
-	public static ResultPojo newInstance(String code,String message) {
+	public static ResultPojo newInstance(String code, String message) {
 		ResultPojo vo = new ResultPojo();
 		vo.setCode(code);
 		vo.setMessage(message);
 		return vo;
 	}
 
-	public static ResultPojo newInstance(List data,long count) {
+	public static ResultPojo newInstance(List data, long count) {
 		ResultPojo vo = new ResultPojo();
 		if(!EmptyUtil.isEmpty(data)){
 			vo.setCode(OK);

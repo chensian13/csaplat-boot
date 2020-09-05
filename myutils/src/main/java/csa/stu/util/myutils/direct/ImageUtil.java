@@ -1,9 +1,8 @@
-package csa.stu.util.myutils.utils;
+package csa.stu.util.myutils.direct;
 
 import java.net.URI;
 
 public abstract class ImageUtil {
-    public static final String patternString = "[http|https]+[://]+[0-9A-Za-z:/[-]_#[?][=][.][&]]*";
 
 
     /**

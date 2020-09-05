@@ -1,4 +1,4 @@
-package csa.stu.util.myutils.constant;
+package csa.stu.util.ap.pojo.constant;
 
 /**
  * 代表操作的常量

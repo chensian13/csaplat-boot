@@ -1,4 +1,4 @@
-package csa.stu.util.myutils.utils;
+package csa.stu.util.myutils.direct;
 
 import java.io.File;
 
@@ -30,7 +30,7 @@ public abstract class FileUtil {
 		try{
 			return path.substring(path.lastIndexOf(".")+1);
 		}catch(Exception e){
-			throw new RuntimeException("文件名称不规范");
+			throw new RuntimeException("获取文件后缀失败");
 		}
 		
 	}

@@ -1,7 +1,7 @@
-package csa.stu.util.components;
+package csa.stu.util.ap.mvc.plus;
 
-import csa.stu.util.myutils.pojo.ResultPojo;
-import csa.stu.util.myutils.utils.EmptyUtil;
+import csa.stu.util.ap.pojo.ResultPojo;
+import csa.stu.util.myutils.direct.EmptyUtil;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 

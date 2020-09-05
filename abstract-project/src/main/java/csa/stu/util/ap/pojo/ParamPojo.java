@@ -1,6 +1,6 @@
-package csa.stu.util.myutils.pojo;
+package csa.stu.util.ap.pojo;
 
-import csa.stu.util.myutils.utils.EmptyUtil;
+import csa.stu.util.myutils.direct.EmptyUtil;
 
 import java.io.Serializable;
 import java.util.HashMap;
