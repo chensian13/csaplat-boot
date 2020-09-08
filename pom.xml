@@ -6,6 +6,7 @@
     <modules>
         <module>myutils</module>
         <module>abstract-project</module>
+        <module>io</module>
     </modules>
 
     <parent>

@@ -41,6 +41,7 @@ public abstract class EmptyUtil {
 	}
 	
 	public static boolean isEmptys(Object...objs){
+		if(objs==null) return true;
 		for (Object object : objs) {
 			if(isEmpty(object)) return true;
 		}
