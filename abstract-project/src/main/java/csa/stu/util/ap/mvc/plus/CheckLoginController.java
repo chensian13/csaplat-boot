@@ -9,10 +9,19 @@ import javax.servlet.http.HttpServletRequest;
  * @param <T>
  */
 public interface CheckLoginController {
-    public static final String CHECK_LOGIN="checkLogin";
 
+    /**
+     * 获取用户登录信息
+     * @param request
+     * @return
+     */
     public abstract Object getLoginUser(HttpServletRequest request);
 
+    /**
+     * 获取白名单方法
+     * @return
+     */
+    public abstract String[] getWhiteMethod();
 
     /**
      * 封装登录信息+检查是否登录
@@ -20,11 +29,15 @@ public interface CheckLoginController {
      * @param product
      * @return
      */
-    default ResultPojo wrapUser(HttpServletRequest request, Product product){
-        String cl=request.getHeader(CHECK_LOGIN);
-        if(EmptyUtil.isEmpty(cl)){
-            //不必登录就可以访问
-            return product.exe(null);
+    default ResultPojo wrapUser(HttpServletRequest request, String whiteMethod , Product product){
+        // 检查白名单
+        if(!EmptyUtil.isEmpty(whiteMethod)
+                && getWhiteMethod() != null){
+            for(String path : getWhiteMethod()){
+                if(path.equals(whiteMethod)){
+                    product.exe(null);
+                }
+            } // end for
         }
         return mustWrapUser(request,product);
     }

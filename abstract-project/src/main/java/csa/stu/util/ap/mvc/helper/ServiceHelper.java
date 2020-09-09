@@ -72,7 +72,7 @@ public class ServiceHelper {
      * @param salt
      * @return
      */
-    public String md5Password(String password,String salt){
+    public static String md5Password(String password,String salt){
         if(password==null){
             throw new RuntimeException("password is null");
         }
