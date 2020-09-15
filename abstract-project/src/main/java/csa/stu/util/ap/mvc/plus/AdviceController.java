@@ -15,6 +15,7 @@ public class AdviceController {
 	@ExceptionHandler
 	@ResponseBody
 	public ResultPojo exceptionHandler(Throwable e){
+		e.printStackTrace();
 		String msg=e.getMessage();
 		if(EmptyUtil.isEmpty(msg)){
 			msg="服务器异常";
