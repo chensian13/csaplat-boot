@@ -6,6 +6,7 @@ import csa.stu.util.ap.pojo.ParamPojo;
 import csa.stu.util.ap.pojo.ResultPojo;
 import csa.stu.util.ap.pojo.constant.OperConstant;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,7 +32,7 @@ public abstract class MyController<T>  implements IController<T> {
      * @exception:
      * @date: 2019/6/29 16:10
      */
-    @RequestMapping("/data/{oper}")
+    @PostMapping("/data/{oper}")
     @ResponseBody
     @Override
     public ResultPojo<T> operData(@RequestBody T entity, @PathVariable String oper, HttpServletRequest request, HttpServletResponse response) {
@@ -55,20 +56,20 @@ public abstract class MyController<T>  implements IController<T> {
     }
 
     @Override
-    @RequestMapping("/queryById/{id}")
+    @PostMapping("/queryById/{id}")
     @ResponseBody
     public ResultPojo<T> queryById(@PathVariable String id,HttpServletRequest request, HttpServletResponse response) {
         return getService().selectById(id);
     }
 
     @Override
-    @RequestMapping("/queryData")
+    @PostMapping("/queryData")
     @ResponseBody
     public ResultPojo<T> queryData(@RequestBody ParamPojo paramPojo, HttpServletRequest request, HttpServletResponse response) {
         return getService().selectData(paramPojo);
     }
 
-    @RequestMapping("/querySimpleData")
+    @PostMapping("/querySimpleData")
     @ResponseBody
     @Override
     public ResultPojo<T> querySimpleData(ParamPojo paramPojo, HttpServletRequest request, HttpServletResponse response) {
