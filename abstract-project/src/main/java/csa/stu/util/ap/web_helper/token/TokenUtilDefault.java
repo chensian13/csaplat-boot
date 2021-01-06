@@ -15,14 +15,14 @@ public class TokenUtilDefault implements TokenUtil {
     private String TOKEN_PATH = "/";
 
     @Override
-    public String getTokenCookie(HttpServletRequest request) {
+    public String getToken(HttpServletRequest request) {
         String val=ControllerHelper.getCookieValue(request,TOKEN_NAME);
         if(EmptyUtil.isEmpty(val)) return null;
         return ControllerHelper.decodeUTF8(val);
     }
 
     @Override
-    public void setTokenCookie(HttpServletResponse response, String value) {
+    public void setToken(HttpServletResponse response, String value) {
         if(EmptyUtil.isEmpty(value))
             throw new RuntimeException("value is null");
         //存入token
@@ -33,7 +33,7 @@ public class TokenUtilDefault implements TokenUtil {
     }
 
     @Override
-    public void removeTokenCookie(HttpServletResponse response) {
+    public void removeToken(HttpServletResponse response) {
         Cookie cookie=new Cookie(TOKEN_NAME,null);
         cookie.setMaxAge(0);
         // 必须要和登录设置cookie路径一致，否则无效

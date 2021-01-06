@@ -15,9 +15,10 @@ public class ResultPojo<T> implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 8030563023285427198L;
-	public static final String OK="OK";
-	public static final String ERROR="ERROR";
-	public static final String NO="NO";
+	public static final int OK=1;
+	public static final int ERROR=-1;
+	public static final int NO=2;
+	public static final int NO_TOKEN=3;
 	
 	private T model;
 	private List<T> list;
@@ -25,7 +26,7 @@ public class ResultPojo<T> implements Serializable{
 	private String message;
 	private String token;
 	private String error;
-	private String code;
+	private int code;
 
 	public T getModel() {
 		return model;
@@ -58,10 +59,10 @@ public class ResultPojo<T> implements Serializable{
 		this.error = error;
 	}
 	
-	public String getCode() {
+	public int getCode() {
 		return code;
 	}
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 
@@ -88,7 +89,7 @@ public class ResultPojo<T> implements Serializable{
 		return rs;
 	}
 
-	public static ResultPojo newInstance(String code, String message) {
+	public static ResultPojo newInstance(int code, String message) {
 		ResultPojo vo = new ResultPojo();
 		vo.setCode(code);
 		vo.setMessage(message);

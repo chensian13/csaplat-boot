@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 public interface TokenUtil {
 
-    public Object getTokenCookie(HttpServletRequest request);
+    public Object getToken(HttpServletRequest request);
 
-    public void setTokenCookie(HttpServletResponse response, String value);
+    public void setToken(HttpServletResponse response, String value);
 
-    public void removeTokenCookie(HttpServletResponse response);
+    public void removeToken(HttpServletResponse response);
 
 }

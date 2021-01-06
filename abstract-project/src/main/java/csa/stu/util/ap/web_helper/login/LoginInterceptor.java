@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletResponse;
  * @author  csa
  */
 public abstract class LoginInterceptor implements HandlerInterceptor {
-    private Logger logger= LoggerFactory.getLogger(LoginInterceptor.class);
+    protected Logger logger= LoggerFactory.getLogger(LoginInterceptor.class);
 
     public abstract Object getLoginUser(HttpServletRequest request);
 
-    public abstract String getLoginPath();
+    public abstract void getLoginPath(HttpServletRequest request, HttpServletResponse response, Object handler);
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -26,7 +26,7 @@ public abstract class LoginInterceptor implements HandlerInterceptor {
                 logger.info("请求放行："+user);
                 return true;
             }
-            response.sendRedirect(getLoginPath());
+            getLoginPath(request, response, handler);
         }catch (Exception e){
             e.printStackTrace();
         }
