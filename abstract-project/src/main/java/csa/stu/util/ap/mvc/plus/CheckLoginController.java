@@ -39,22 +39,13 @@ public interface CheckLoginController {
                 }
             } // end for
         }
-        return mustWrapUser(request,product);
-    }
-
-    /**
-     * 必须有登录信息
-     * @param request
-     * @param product
-     * @return
-     */
-    default ResultPojo mustWrapUser(HttpServletRequest request,Product product){
         Object user=getLoginUser(request);
         if(user==null){
             return rsNoLogin();
         }
         return product.exe(user);
     }
+
 
 
 
